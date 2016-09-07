@@ -18,4 +18,5 @@
         android:id="@+id/imageView"
         android:layout_gravity="center"
         android:src="@drawable/logo" />
+
 </FrameLayout>
