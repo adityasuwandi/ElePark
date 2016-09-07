@@ -32,7 +32,12 @@
             android:name=".myLocation"
             android:label="@string/title_activity_my_location" />
         <activity android:name=".mainMenu" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
