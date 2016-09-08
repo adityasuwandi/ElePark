@@ -20,7 +20,8 @@
         android:onClick=""
         android:layout_marginBottom="26dp"
         android:layout_above="@+id/imageButton"
-        android:layout_centerHorizontal="true" /><ImageButton
+        android:layout_centerHorizontal="true" />
+    <ImageButton
         android:layout_width="270dp"
         android:layout_height="93dp"
         android:id="@+id/imageButton"
@@ -38,6 +39,15 @@
         android:layout_below="@+id/imageButton"
         android:layout_marginTop="51dp">
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="114dp"
+            android:id="@+id/editText"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="E3"
+            android:textSize="50dp"
+            android:typeface=""/>
     </LinearLayout>
 </RelativeLayout>
 
