@@ -35,8 +35,8 @@ public class mainMenu extends AppCompatActivity {
         gotosetting.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent findIntent = new Intent(mainMenu.this, Settings.class);
-                startActivity(findIntent);
+                Intent settingIntent = new Intent(mainMenu.this, Settings.class);
+                startActivity(settingIntent);
             }
         });
     }
