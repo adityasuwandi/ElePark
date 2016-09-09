@@ -17,7 +17,7 @@ public class mainMenu extends AppCompatActivity {
         gotoset.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent setIntent = new Intent(view.getContext(), FormActivity.class);
+                Intent setIntent = new Intent(mainMenu.this, FormActivity.class);
             }
         });//aaaaa
     }
