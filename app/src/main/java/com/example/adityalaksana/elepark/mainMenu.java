@@ -30,6 +30,15 @@ public class mainMenu extends AppCompatActivity {
                 startActivity(findIntent);
             }
         });
+
+        ImageButton gotosetting = (ImageButton) findViewById(R.id.settingimg);
+        gotosetting.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent findIntent = new Intent(mainMenu.this, Settings.class);
+                startActivity(findIntent);
+            }
+        });
     }
 
 
