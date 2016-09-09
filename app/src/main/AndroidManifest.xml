@@ -43,6 +43,7 @@
         <activity
             android:name=".FindLocation"
             android:label="@string/title_activity_find_location" />
+        <activity android:name=".ListAdapter"></activity>
     </application>
 
 </manifest>
