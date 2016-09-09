@@ -20,7 +20,7 @@ public class mainMenu extends AppCompatActivity {
                 Intent setIntent = new Intent(view.getContext(), FormActivity.class);
             }
         });
-    }
+    }//a
 
 
 }
