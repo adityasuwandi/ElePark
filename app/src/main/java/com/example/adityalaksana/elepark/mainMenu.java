@@ -18,6 +18,7 @@ public class mainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent setIntent = new Intent(mainMenu.this, FormActivity.class);
+                startActivity(setIntent);
             }
         });//aaaaa
     }

@@ -15,7 +15,7 @@
         android:layout_height="60dp"
         android:background="#14204e"
         android:id="@+id/editText2"
-        android:text="E2 Lantai B"
+        android:text="e.g : E2 Lantai B"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="107dp"
@@ -29,25 +29,23 @@
         android:layout_height="60dp"
         android:background="#14204e"
         android:id="@+id/editText3"
-        android:text="sebelah mobil hitam"
+        android:text="e.g : sebelah mobil hitam"
         android:textColor="#71ffffff"
         android:textSize="25dp"
         android:textAlignment="center"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="142dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Additional Information"
         android:id="@+id/form1"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/editText3"
-        android:layout_centerHorizontal="true"
         android:textSize="25sp"
         android:fontFamily="sans-serif-black"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff"
+        android:layout_above="@+id/editText3"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,6 +58,17 @@
         android:layout_marginTop="67dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageButton2"
+        android:src="@drawable/nextbutton"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
 
 
 </RelativeLayout>

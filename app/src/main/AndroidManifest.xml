@@ -39,7 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormActivity"></activity>
+        <activity android:name=".FormActivity" />
+        <activity
+            android:name=".FindLocation"
+            android:label="@string/title_activity_find_location"></activity>
     </application>
 
 </manifest>
