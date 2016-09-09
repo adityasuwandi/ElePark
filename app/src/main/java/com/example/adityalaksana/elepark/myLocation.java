@@ -55,24 +55,24 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
 //        txtLat = (TextView) findViewById(R.id.txtLat);
 //        txtLng = (TextView) findViewById(R.id.txtLong);
 //        savemap = (Button) findViewById(R.id.savemapbtn);
-        savemap.setOnClickListener(new View.OnClickListener() {
-            //Back
-            @Override
-            public void onClick(View view) {
-//                Intent myIntent = new Intent(getApplicationContext(), add_kegiatan.class);
-//                startActivity(myIntent);
-                Intent intent = new Intent();
-                intent.putExtra("latitude", txtLat.getText().toString());
-                intent.putExtra("longitude", txtLng.getText().toString());
-                setResult(RESULT_OK, intent);
-                onBackPressed();//map
-
-            }
-        });
+//        savemap.setOnClickListener(new View.OnClickListener() {
+//            //Back
+//            @Override
+//            public void onClick(View view) {
+////                Intent myIntent = new Intent(getApplicationContext(), add_kegiatan.class);
+////                startActivity(myIntent);
+//                Intent intent = new Intent();
+//                intent.putExtra("latitude", txtLat.getText().toString());
+//                intent.putExtra("longitude", txtLng.getText().toString());
+//                setResult(RESULT_OK, intent);
+//                onBackPressed();//map
+//
+//            }
+//        });
     }
 
 //    public void onMapSearch(View view) {
-//        EditText locationSearch = (EditText) findViewById(R.id.searchmap);
+//        EditText locationSearch = (EditText) findViewById(R.id.map);
 //        String location = locationSearch.getText().toString();
 //        List<Address> addressList = null;
 //
