@@ -34,8 +34,8 @@ public class Settings extends AppCompatActivity {
     public void createNotification() {
 
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this);
-        nBuilder.setContentTitle("Info");
-        nBuilder.setContentText("asdsadsadsa");
+        nBuilder.setContentTitle("ElePark");
+        nBuilder.setContentText("You are Parking on LG E7");
         nBuilder.setSmallIcon(R.drawable.button);
 
 

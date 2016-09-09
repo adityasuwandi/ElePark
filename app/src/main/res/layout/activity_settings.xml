@@ -12,20 +12,37 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:weightSum="1"
-        android:id="@+id/linearLayout3">
+        android:id="@+id/linearLayout3"
+        android:background="#101c3d">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle"
+            android:checked="false"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="right" />
 
     </LinearLayout>
 
-    <ToggleButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/toggle"
-        android:checked="false"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Notifikasi"
+        android:id="@+id/Notifikasi"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:textSize="40dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp" />
 
 </RelativeLayout>
