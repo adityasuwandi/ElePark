@@ -14,7 +14,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:background="#14204e"
-        android:id="@+id/editText2"
+        android:id="@+id/editTextFloor"
         android:text="e.g : Lantai LG"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -28,7 +28,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:background="#14204e"
-        android:id="@+id/editText3"
+        android:id="@+id/editTextBlock"
         android:text="e.g : E7"
         android:textColor="#71ffffff"
         android:textSize="25dp"
@@ -44,7 +44,7 @@
         android:textSize="25sp"
         android:fontFamily="sans-serif-black"
         android:textColor="#ffffff"
-        android:layout_above="@+id/editText3"
+        android:layout_above="@+id/editTextBlock"
         android:layout_centerHorizontal="true" />
 
     <TextView
