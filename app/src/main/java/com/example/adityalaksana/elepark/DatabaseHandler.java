@@ -26,6 +26,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_FLOOR = "floor";
     private static final String KEY_BLOCK = "block";
     private static final String KEY_LONGITUDE = "longitude";
+    private static final String KEY_LATITUDE = "latitude";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -36,7 +37,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_POSITION_TABLE = "CREATE TABLE " + TABLE_POSITION + "(" + KEY_ID +
                 "INTEGER PRIMARY KEY AUTO INCREMENT," + KEY_FLOOR + " TEXT" + KEY_BLOCK + " TEXT"
-                + KEY_LONGITUDE + " TEXT" + ")";
+                + KEY_LONGITUDE + " TEXT" + KEY_LATITUDE + "TEXT" + ")";
         db.execSQL(CREATE_POSITION_TABLE);
     }
 
@@ -57,6 +58,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_FLOOR, position.getFloor()); // Contact Floor
         values.put(KEY_BLOCK, position.getBlock());// Contact Block
         values.put(KEY_LONGITUDE, position.getLongitude());
+        values.put(KEY_LATITUDE, position.getLatitude());
 
         // Inserting Row
         db.insert(TABLE_POSITION, null, values);

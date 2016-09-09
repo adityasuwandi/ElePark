@@ -2,6 +2,7 @@ package com.example.adityalaksana.elepark;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -12,6 +13,8 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -23,27 +26,28 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 public class myLocation extends AppCompatActivity {
 
     GoogleMap mMap;
-    double[] latitude_rm, longitude_rm;
-    public String[] nama_RM, alamat_RM;
-    public int id_RM;
-
+    String lat, lon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_location);
         setUpMapIfNeeded();
+
+
+        ImageButton saveposition = (ImageButton) findViewById(R.id.imageButtonSave);
+        saveposition.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), mainMenu.class);
+                myIntent.putExtra("latitude", lat);
+                myIntent.putExtra("longitude", lon);
+                startActivity(myIntent);
+            }
+        });
     }
 
     private void setUpMapIfNeeded() {
@@ -87,9 +91,12 @@ public class myLocation extends AppCompatActivity {
 
         // Get latitude of the current location
         double latitude = myLocation.getLatitude();
+        lat = String.valueOf(latitude);
+
 
         // Get longitude of the current location
         double longitude = myLocation.getLongitude();
+        lon = String.valueOf(longitude);
 
 
         // Create a LatLng object for the current location
@@ -99,7 +106,7 @@ public class myLocation extends AppCompatActivity {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
         // Zoom in the Google Map
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(25));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(100));
 
 
         LatLng myCoordinates = new LatLng(latitude, longitude);

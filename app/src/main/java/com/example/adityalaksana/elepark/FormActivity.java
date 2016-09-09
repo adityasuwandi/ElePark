@@ -15,6 +15,8 @@ public class FormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
 
+        DatabaseHandler db = new DatabaseHandler(this);
+
 
         EditText floor = (EditText) findViewById(R.id.editTextFloor);
         stringFloor = floor.getText().toString();
@@ -27,7 +29,7 @@ public class FormActivity extends AppCompatActivity {
         gotolocation.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent locationIntent = new Intent(FormActivity.this, myLocation.class);
+                Intent locationIntent = new Intent(getApplicationContext(), myLocation.class);
                 locationIntent.putExtra("floor", stringFloor);
                 locationIntent.putExtra("block", stringBlock);
                 startActivity(locationIntent);
@@ -35,4 +37,5 @@ public class FormActivity extends AppCompatActivity {
         });
 
     }
+
 }
