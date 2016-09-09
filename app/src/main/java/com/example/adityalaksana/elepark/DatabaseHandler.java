@@ -36,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_POSITION_TABLE = "CREATE TABLE " + TABLE_POSITION + "(" + KEY_ID +
-                "INTEGER PRIMARY KEY AUTO INCREMENT, " + KEY_FLOOR + " TEXT, " + KEY_BLOCK + " TEXT, "
+                " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_FLOOR + " TEXT, " + KEY_BLOCK + " TEXT, "
                 + KEY_LONGITUDE + " TEXT, " + KEY_LATITUDE + "TEXT" + ")";
         db.execSQL(CREATE_POSITION_TABLE);
     }
