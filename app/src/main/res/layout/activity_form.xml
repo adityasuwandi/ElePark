@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".formku"
+    tools:context="com.example.adityalaksana.elepark.FormActivity"
     android:background="#101c3d">
 
     <EditText
@@ -73,3 +73,6 @@
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
+
+
+
