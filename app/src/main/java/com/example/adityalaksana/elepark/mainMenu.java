@@ -48,6 +48,8 @@ public class mainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent settingIntent = new Intent(mainMenu.this, Settings.class);
+                settingIntent.putExtra("floor", floor);
+                settingIntent.putExtra("block", block);
                 startActivity(settingIntent);
             }
         });
