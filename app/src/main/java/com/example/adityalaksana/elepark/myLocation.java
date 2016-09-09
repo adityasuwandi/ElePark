@@ -29,7 +29,7 @@ public class myLocation extends FragmentActivity implements OnMapReadyCallback {
 
     }
 
-    private void setUpMapIfNeeded() {
+    private void setUpMapIfNeeded() {//a
         if (mMap == null) {
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
             if (mMap != null) {
