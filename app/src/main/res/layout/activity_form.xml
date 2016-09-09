@@ -8,17 +8,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".form"
-    android:background="#1670c4">
+    android:background="#101c3d">
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:background="#ffffff"
+        android:background="#14204e"
         android:id="@+id/editText2"
         android:text="Lantai Parkir"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp" />
+        android:layout_marginTop="107dp"
+        android:textColor="#71ffffff"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:singleLine="false" />
 
     <EditText
         android:layout_width="300dp"
@@ -34,11 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Additional Information"
-        android:id="@+id/textView"
+        android:id="@+id/form1"
         android:layout_marginBottom="20dp"
         android:layout_above="@+id/editText3"
         android:layout_centerHorizontal="true"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:fontFamily="sans-serif-black"
         android:textColor="#ffffff"/>
 
@@ -46,9 +50,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Parking Block"
-        android:id="@+id/textView2"
+        android:id="@+id/form2"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#ffffff"
+        android:layout_marginTop="67dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp" />
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageButton2"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/nextbutton"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
