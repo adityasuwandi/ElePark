@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class mainMenu extends AppCompatActivity {
-
+    String floor, block;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

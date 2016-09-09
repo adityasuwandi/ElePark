@@ -30,7 +30,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class myLocation extends AppCompatActivity {
 
     GoogleMap mMap;
-    String lat, lon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +42,6 @@ public class myLocation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(getApplicationContext(), mainMenu.class);
-                myIntent.putExtra("latitude", lat);
-                myIntent.putExtra("longitude", lon);
                 startActivity(myIntent);
             }
         });
@@ -86,17 +83,16 @@ public class myLocation extends AppCompatActivity {
         // Get Current Location
         Location myLocation = locationManager.getLastKnownLocation(provider);
 
+
         // set map type
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         // Get latitude of the current location
         double latitude = myLocation.getLatitude();
-        lat = String.valueOf(latitude);
 
 
         // Get longitude of the current location
         double longitude = myLocation.getLongitude();
-        lon = String.valueOf(longitude);
 
 
         // Create a LatLng object for the current location

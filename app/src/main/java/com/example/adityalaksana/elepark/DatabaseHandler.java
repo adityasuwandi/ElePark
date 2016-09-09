@@ -36,8 +36,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_POSITION_TABLE = "CREATE TABLE " + TABLE_POSITION + "(" + KEY_ID +
-                "INTEGER PRIMARY KEY AUTO INCREMENT," + KEY_FLOOR + " TEXT" + KEY_BLOCK + " TEXT"
-                + KEY_LONGITUDE + " TEXT" + KEY_LATITUDE + "TEXT" + ")";
+                "INTEGER PRIMARY KEY AUTO INCREMENT, " + KEY_FLOOR + " TEXT, " + KEY_BLOCK + " TEXT, "
+                + KEY_LONGITUDE + " TEXT, " + KEY_LATITUDE + "TEXT" + ")";
         db.execSQL(CREATE_POSITION_TABLE);
     }
 
@@ -51,18 +51,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addData(Position position) {
+    public boolean addData(String floor, String block, String longitude, String latitude) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_FLOOR, position.getFloor()); // Contact Floor
-        values.put(KEY_BLOCK, position.getBlock());// Contact Block
-        values.put(KEY_LONGITUDE, position.getLongitude());
-        values.put(KEY_LATITUDE, position.getLatitude());
+        values.put(KEY_FLOOR, floor); // Contact Floor
+        values.put(KEY_BLOCK, block);// Contact Block
+        values.put(KEY_LONGITUDE, longitude);
+        values.put(KEY_LATITUDE, latitude);
 
         // Inserting Row
-        db.insert(TABLE_POSITION, null, values);
+        long result = db.insert(TABLE_POSITION, null, values);
         db.close(); // Closing database connection
+        if (result == -1)return false;
+        else return true;
     }
 
     public Cursor getAllData(){

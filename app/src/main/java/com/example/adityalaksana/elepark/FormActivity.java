@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class FormActivity extends AppCompatActivity {
     String stringFloor, stringBlock;
+    DatabaseHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class FormActivity extends AppCompatActivity {
         gotolocation.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                addData();
                 Intent locationIntent = new Intent(getApplicationContext(), myLocation.class);
                 locationIntent.putExtra("floor", stringFloor);
                 locationIntent.putExtra("block", stringBlock);
@@ -36,6 +39,15 @@ public class FormActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void addData(){
+        db = new DatabaseHandler(this);
+        boolean isInserted = db.addData(stringFloor, stringBlock, "", "");
+        if (isInserted){
+            Toast.makeText(getApplicationContext(), stringFloor + "&" + stringBlock, Toast.LENGTH_SHORT).show();
+        }
+        else Toast.makeText(getApplicationContext(),"Can't Insert Data" , Toast.LENGTH_SHORT).show();
     }
 
 }
