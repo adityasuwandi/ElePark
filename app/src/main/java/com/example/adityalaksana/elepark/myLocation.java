@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +38,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class myLocation extends AppCompatActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
+    String floor, block;
     public static Double lat;
     public static Double lng;
     private Button savemap;
@@ -52,6 +53,21 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Intent intent = getIntent();
+        floor = intent.getStringExtra("floor");
+        block = intent.getStringExtra("block");
+
+        ImageButton savelocation = (ImageButton) findViewById(R.id.imageButtonSave);
+        savelocation.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getApplicationContext(), mainMenu.class);
+                myIntent.putExtra("homefloor", floor);
+                myIntent.putExtra("homeblock", block);
+                startActivity(myIntent);
+            }
+        });
 //        txtLat = (TextView) findViewById(R.id.txtLat);
 //        txtLng = (TextView) findViewById(R.id.txtLong);
 //        savemap = (Button) findViewById(R.id.savemapbtn);
