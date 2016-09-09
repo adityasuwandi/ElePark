@@ -19,8 +19,8 @@ public class mainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent setIntent = new Intent(view.getContext(), FormActivity.class);
             }
-        });
-    }//a
+        });//aaaaa
+    }
 
 
 }
