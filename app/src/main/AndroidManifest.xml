@@ -42,7 +42,7 @@
         <activity android:name=".FormActivity" />
         <activity
             android:name=".FindLocation"
-            android:label="@string/title_activity_find_location"></activity>
+            android:label="@string/title_activity_find_location" />
     </application>
 
 </manifest>
