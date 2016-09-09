@@ -65,7 +65,7 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
                 intent.putExtra("latitude", txtLat.getText().toString());
                 intent.putExtra("longitude", txtLng.getText().toString());
                 setResult(RESULT_OK, intent);
-                onBackPressed();
+                onBackPressed();//map
 
             }
         });
