@@ -78,7 +78,7 @@
     <ImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:id="@+id/imageButton"
+        android:id="@+id/settingimg"
         android:src="@drawable/settings"
         android:scaleType="fitXY"
         android:background="#00ffffff"

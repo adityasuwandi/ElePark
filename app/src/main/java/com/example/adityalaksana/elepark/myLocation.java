@@ -99,7 +99,7 @@ public class myLocation extends AppCompatActivity {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
         // Zoom in the Google Map
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(25));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(100));
 
 
         LatLng myCoordinates = new LatLng(latitude, longitude);
