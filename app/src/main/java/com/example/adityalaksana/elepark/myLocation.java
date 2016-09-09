@@ -9,6 +9,7 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class myLocation extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private static final int A= 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,15 @@ public class myLocation extends FragmentActivity implements OnMapReadyCallback {
         String provider = locationManager.getBestProvider(criteria, true);
 
         // Get Current Location
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+           if (ActivityCompat.shouldShowRequestPermissionRationale(myLocation.this, Manifest.permission.ACCESS_FINE_LOCATION)){
+
+           } else{
+
+               ActivityCompat.requestPermissions(myLocation.this,
+                       new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, A);
+
+           }
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
