@@ -107,22 +107,22 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
             return;
         }
         mMap.setMyLocationEnabled(true);
-        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
-            @Override
-            public void onMapLongClick(LatLng latLng) {
-                mMap.addCircle(new CircleOptions()
-                        .center(latLng)
-                        .radius(100)
-                        .strokeColor(R.color.colorPrimary)
-                        .fillColor(R.color.colorPrimary));
-                mMap.addMarker(new MarkerOptions().position(latLng).title("Tes"));
-                txtLat.setText(String.valueOf(latLng.latitude));
-                txtLng.setText(String.valueOf(latLng.longitude));
-                lat = latLng.latitude;
-                lng = latLng.longitude;
-//                Toast.makeText(getApplicationContext(), String.valueOf(latLng.latitude) + "," + String.valueOf(latLng.longitude), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
+//            @Override
+//            public void onMapLongClick(LatLng latLng) {
+//                mMap.addCircle(new CircleOptions()
+//                        .center(latLng)
+//                        .radius(100)
+//                        .strokeColor(R.color.colorPrimary)
+//                        .fillColor(R.color.colorPrimary));
+//                mMap.addMarker(new MarkerOptions().position(latLng).title("Tes"));
+//                txtLat.setText(String.valueOf(latLng.latitude));
+//                txtLng.setText(String.valueOf(latLng.longitude));
+//                lat = latLng.latitude;
+//                lng = latLng.longitude;
+////                Toast.makeText(getApplicationContext(), String.valueOf(latLng.latitude) + "," + String.valueOf(latLng.longitude), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 
