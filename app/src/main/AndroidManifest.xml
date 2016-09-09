@@ -39,7 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".form"></activity>
+        <activity android:name=".formku"></activity>
     </application>
 
 </manifest>

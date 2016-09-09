@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".form"
+    tools:context=".formku"
     android:background="#101c3d">
 
     <EditText
@@ -15,7 +15,7 @@
         android:layout_height="60dp"
         android:background="#14204e"
         android:id="@+id/editText2"
-        android:text="Lantai Parkir"
+        android:text="E2 Lantai B"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="107dp"
@@ -27,9 +27,12 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:background="#ffffff"
+        android:background="#14204e"
         android:id="@+id/editText3"
-        android:text="Kode Parkir"
+        android:text="sebelah mobil hitam"
+        android:textColor="#71ffffff"
+        android:textSize="25dp"
+        android:textAlignment="center"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="142dp" />
