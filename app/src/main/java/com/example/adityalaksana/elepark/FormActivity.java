@@ -20,17 +20,16 @@ public class FormActivity extends AppCompatActivity {
         DatabaseHandler db = new DatabaseHandler(this);
 
 
-        EditText floor = (EditText) findViewById(R.id.editTextFloor);
-        stringFloor = floor.getText().toString();
-
-        EditText block = (EditText) findViewById(R.id.editTextBlock);
-        stringBlock = block.getText().toString();
+        final EditText floor = (EditText) findViewById(R.id.editTextFloor);
+        final EditText block = (EditText) findViewById(R.id.editTextBlock);
 
         ImageButton gotolocation = (ImageButton) findViewById(R.id.imageButtonNext);
         assert gotolocation != null;
         gotolocation.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                stringFloor = floor.getText().toString();
+                stringBlock = block.getText().toString();
                 addData();
                 Intent locationIntent = new Intent(getApplicationContext(), myLocation.class);
                 locationIntent.putExtra("floor", stringFloor);

@@ -55,20 +55,20 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
 //        txtLat = (TextView) findViewById(R.id.txtLat);
 //        txtLng = (TextView) findViewById(R.id.txtLong);
 //        savemap = (Button) findViewById(R.id.savemapbtn);
-        savemap.setOnClickListener(new View.OnClickListener() {
-            //Back
-            @Override
-            public void onClick(View view) {
-//                Intent myIntent = new Intent(getApplicationContext(), add_kegiatan.class);
-//                startActivity(myIntent);
-                Intent intent = new Intent();
-                intent.putExtra("latitude", txtLat.getText().toString());
-                intent.putExtra("longitude", txtLng.getText().toString());
-                setResult(RESULT_OK, intent);
-                onBackPressed();//map
-
-            }
-        });
+//        savemap.setOnClickListener(new View.OnClickListener() {
+//            //Back
+//            @Override
+//            public void onClick(View view) {
+////                Intent myIntent = new Intent(getApplicationContext(), add_kegiatan.class);
+////                startActivity(myIntent);
+//                Intent intent = new Intent();
+//                intent.putExtra("latitude", txtLat.getText().toString());
+//                intent.putExtra("longitude", txtLng.getText().toString());
+//                setResult(RESULT_OK, intent);
+//                onBackPressed();//map
+//
+//            }
+//        });
     }
 
 //    public void onMapSearch(View view) {
@@ -107,22 +107,22 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
             return;
         }
         mMap.setMyLocationEnabled(true);
-        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
-            @Override
-            public void onMapLongClick(LatLng latLng) {
-                mMap.addCircle(new CircleOptions()
-                        .center(latLng)
-                        .radius(100)
-                        .strokeColor(R.color.colorPrimary)
-                        .fillColor(R.color.colorPrimary));
-                mMap.addMarker(new MarkerOptions().position(latLng).title("Tes"));
-                txtLat.setText(String.valueOf(latLng.latitude));
-                txtLng.setText(String.valueOf(latLng.longitude));
-                lat = latLng.latitude;
-                lng = latLng.longitude;
-//                Toast.makeText(getApplicationContext(), String.valueOf(latLng.latitude) + "," + String.valueOf(latLng.longitude), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
+//            @Override
+//            public void onMapLongClick(LatLng latLng) {
+//                mMap.addCircle(new CircleOptions()
+//                        .center(latLng)
+//                        .radius(100)
+//                        .strokeColor(R.color.colorPrimary)
+//                        .fillColor(R.color.colorPrimary));
+//                mMap.addMarker(new MarkerOptions().position(latLng).title("Tes"));
+//                txtLat.setText(String.valueOf(latLng.latitude));
+//                txtLng.setText(String.valueOf(latLng.longitude));
+//                lat = latLng.latitude;
+//                lng = latLng.longitude;
+////                Toast.makeText(getApplicationContext(), String.valueOf(latLng.latitude) + "," + String.valueOf(latLng.longitude), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 
