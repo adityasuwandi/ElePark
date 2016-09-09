@@ -20,7 +20,16 @@ public class mainMenu extends AppCompatActivity {
                 Intent setIntent = new Intent(mainMenu.this, FormActivity.class);
                 startActivity(setIntent);
             }
-        });//aaaaa
+        });
+
+        ImageButton gotofind = (ImageButton) findViewById(R.id.imageButtonFind);
+        gotofind.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent findIntent = new Intent(mainMenu.this, FindLocation.class);
+                startActivity(findIntent);
+            }
+        });
     }
 
 

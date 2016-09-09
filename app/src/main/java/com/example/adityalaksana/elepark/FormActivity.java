@@ -1,7 +1,10 @@
 package com.example.adityalaksana.elepark;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -9,5 +12,15 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+        ImageButton gotolocation = (ImageButton) findViewById(R.id.imageButtonNext);
+        gotolocation.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent locationIntent = new Intent(FormActivity.this, myLocation.class);
+                startActivity(locationIntent);
+            }
+        });
+
     }
 }
