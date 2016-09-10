@@ -63,6 +63,15 @@ public class mainMenu extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+        ImageButton unpark = (ImageButton) findViewById(R.id.imageButtonUnpark);
+        unpark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getApplicationContext(), mainMenu.class);
+                startActivity(myIntent);
+            }
+        });
     }
 
 
