@@ -38,8 +38,8 @@ import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 public class FindLocation extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     String floor, block, lat, lng;
-    public static Double latitude;
-    public static Double longitude;
+    public static double latitude;
+    public static double longitude;
     //private Button savemap;
     //TextView txtLat, txtLng;
 //    add_kegiatan addKegiatan = new add_kegiatan();
