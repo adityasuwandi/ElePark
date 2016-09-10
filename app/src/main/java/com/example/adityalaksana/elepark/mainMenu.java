@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class mainMenu extends AppCompatActivity {
-    String floor, block;
+    String floor, block, lat, lng;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +17,8 @@ public class mainMenu extends AppCompatActivity {
         final Intent intent = getIntent();
         floor = intent.getStringExtra("homefloor");
         block = intent.getStringExtra("homeblock");
+        lat = intent.getStringExtra("latitude");
+        lng = intent.getStringExtra("longitude");
 
         TextView f = (TextView) findViewById(R.id.textViewHomeFloor);
         f.setText(floor);
@@ -37,8 +39,10 @@ public class mainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent findIntent = new Intent(mainMenu.this, FindLocation.class);
-                intent.putExtra("floor", floor);
-                intent.putExtra("block", block);
+                findIntent.putExtra("lat", lat);
+                findIntent.putExtra("lng", lng);
+                findIntent.putExtra("floor", floor);
+                findIntent.putExtra("block", block);
                 startActivity(findIntent);
             }
         });

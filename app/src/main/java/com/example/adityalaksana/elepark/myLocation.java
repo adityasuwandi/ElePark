@@ -39,13 +39,12 @@ import java.util.List;
 
 public class myLocation extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-    String floor, block;
-    public static Double lat;
-    public static Double lng;
+    String floor, block, lat, lng;
     private Button savemap;
     TextView txtLat, txtLng;
 //    add_kegiatan addKegiatan = new add_kegiatan();
 
+    GPSTracker gps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +52,10 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        gps = new GPSTracker(this);
+
+        lat = String.valueOf(gps.getLocation().getLatitude());
+        lng = String.valueOf(gps.getLocation().getLongitude());
 
         Intent intent = getIntent();
         floor = intent.getStringExtra("floor");
@@ -63,6 +66,8 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(getApplicationContext(), mainMenu.class);
+                myIntent.putExtra("latitude", lat);
+                myIntent.putExtra("longitude", lng);
                 myIntent.putExtra("homefloor", floor);
                 myIntent.putExtra("homeblock", block);
                 startActivity(myIntent);
@@ -110,6 +115,7 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        final double latlng;
 
         //Memunculkan tombol untuk mengetahui user location & permission nya
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -123,6 +129,13 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
             return;
         }
         mMap.setMyLocationEnabled(true);
+        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+            @Override
+            public boolean onMyLocationButtonClick() {
+
+                return false;
+            }
+        });
 //        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
 //            @Override
 //            public void onMapLongClick(LatLng latLng) {
@@ -135,19 +148,11 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
 //                txtLat.setText(String.valueOf(latLng.latitude));
 //                txtLng.setText(String.valueOf(latLng.longitude));
 //                lat = latLng.latitude;
-//                lng = latLng.longitude;
+//                 lng = latLng.longitude;
 ////                Toast.makeText(getApplicationContext(), String.valueOf(latLng.latitude) + "," + String.valueOf(latLng.longitude), Toast.LENGTH_SHORT).show();
 //            }
 //        });
 
-    }
-
-    public Double getLat() {
-        return lat;
-    }
-
-    public Double getLng() {
-        return lng;
     }
 
 }

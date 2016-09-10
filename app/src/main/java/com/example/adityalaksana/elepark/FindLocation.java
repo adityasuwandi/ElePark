@@ -37,9 +37,9 @@ import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 
 public class FindLocation extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-    String floor, block;
-    public static Double lat;
-    public static Double lng;
+    String floor, block, lat, lng;
+    public static Double latitude;
+    public static Double longitude;
     //private Button savemap;
     //TextView txtLat, txtLng;
 //    add_kegiatan addKegiatan = new add_kegiatan();
@@ -47,7 +47,7 @@ public class FindLocation extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_location);
+        setContentView(R.layout.activity_find_location);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -55,6 +55,11 @@ public class FindLocation extends AppCompatActivity implements OnMapReadyCallbac
         Intent intent = getIntent();
         floor = intent.getStringExtra("floor");
         block = intent.getStringExtra("block");
+        lat = intent.getStringExtra("lat");
+        lng = intent.getStringExtra("lng");
+
+        latitude = Double.parseDouble(lat);
+        longitude = Double.parseDouble(lng);
 
         TextView f = (TextView) findViewById(R.id.textViewFindFloor);
         f.setText(floor);
@@ -99,6 +104,7 @@ public class FindLocation extends AppCompatActivity implements OnMapReadyCallbac
             return;
         }
         mMap.setMyLocationEnabled(true);
+        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)));
 //        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
 //            @Override
 //            public void onMapLongClick(LatLng latLng) {
