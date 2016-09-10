@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LG"
+                android:text=""
                 android:id="@+id/textViewFindFloor"
                 android:layout_gravity="center_horizontal"
                 android:textSize="40dp"
@@ -62,7 +62,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:layout_width="194dp"
+                android:layout_width="171dp"
                 android:layout_height="wrap_content"
                 android:text="BLOCK"
                 android:id="@+id/textView2"
@@ -76,7 +76,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="E7"
+                android:text=""
                 android:id="@+id/textViewFindBlock"
                 android:layout_gravity="center_horizontal"
                 android:textSize="40dp"

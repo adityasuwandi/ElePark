@@ -37,12 +37,13 @@ import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 
 public class FindLocation extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-    String floor, block, lat, lng;
-    public static Double latitude;
-    public static Double longitude;
+    String floor, block, latitude, longitudek;
+    double lat;
+    double lng;
     //private Button savemap;
     //TextView txtLat, txtLng;
 //    add_kegiatan addKegiatan = new add_kegiatan();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,21 +53,22 @@ public class FindLocation extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
         Intent intent = getIntent();
         floor = intent.getStringExtra("floor");
         block = intent.getStringExtra("block");
-        lat = intent.getStringExtra("lat");
-        lng = intent.getStringExtra("lng");
+        latitude = intent.getStringExtra("lat");
+        longitudek = intent.getStringExtra("lng");
 
-        latitude = Double.parseDouble(lat);
-        longitude = Double.parseDouble(lng);
+        lat = Double.parseDouble(latitude);
+        lng = Double.parseDouble(longitudek);
 
         TextView f = (TextView) findViewById(R.id.textViewFindFloor);
         f.setText(floor);
 
         TextView b = (TextView) findViewById(R.id.textViewFindBlock);
         b.setText(block);
-    }//afhbajhksf
+    }
 
 //    public void onMapSearch(View view) {
 //        EditText locationSearch = (EditText) findViewById(R.id.map);
@@ -103,24 +105,13 @@ public class FindLocation extends AppCompatActivity implements OnMapReadyCallbac
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
         mMap.setMyLocationEnabled(true);
-        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)));
-//        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
-//            @Override
-//            public void onMapLongClick(LatLng latLng) {
-//                mMap.addCircle(new CircleOptions()
-//                        .center(latLng)
-//                        .radius(100)
-//                        .strokeColor(R.color.colorPrimary)
-//                        .fillColor(R.color.colorPrimary));
-//                mMap.addMarker(new MarkerOptions().position(latLng).title("Tes"));
-//                txtLat.setText(String.valueOf(latLng.latitude));
-//                txtLng.setText(String.valueOf(latLng.longitude));
-//                lat = latLng.latitude;
-//                lng = latLng.longitude;
-////                Toast.makeText(getApplicationContext(), String.valueOf(latLng.latitude) + "," + String.valueOf(latLng.longitude), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
+        Marker marker = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(lat, lng))
+                .title("Your Parking Location"));
+
 
     }
 

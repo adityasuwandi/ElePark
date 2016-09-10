@@ -34,7 +34,7 @@ public class FormActivity extends AppCompatActivity {
                 addData();
                 Intent locationIntent = new Intent(getApplicationContext(), myLocation.class);
                 locationIntent.putExtra("floor", stringFloor);
-                locationIntent.putExtra("block", stringBlock);//a
+                locationIntent.putExtra("block", stringBlock);
                 startActivity(locationIntent);
             }
         });

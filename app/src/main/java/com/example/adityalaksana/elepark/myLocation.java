@@ -49,7 +49,7 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        gps = new GPSTracker(this);
+
 
         Intent intent = getIntent();
         floor = intent.getStringExtra("floor");
@@ -59,8 +59,11 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
         savelocation.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                lat = String.valueOf(gps.getLocation().getLatitude());
-                lng = String.valueOf(gps.getLocation().getLongitude());
+                gps = new GPSTracker(myLocation.this);
+                double latd = gps.getLocation().getLatitude();
+                double lngd = gps.getLocation().getLongitude();
+                lat = String.valueOf(latd);
+                lng = String.valueOf(lngd);
                 Intent myIntent = new Intent(getApplicationContext(), mainMenu.class);
                 myIntent.putExtra("latitude", lat);
                 myIntent.putExtra("longitude", lng);

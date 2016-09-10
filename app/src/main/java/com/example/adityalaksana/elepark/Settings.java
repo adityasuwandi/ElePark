@@ -40,7 +40,7 @@ public class Settings extends AppCompatActivity {
 
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this);
         nBuilder.setContentTitle("ElePark");
-        nBuilder.setContentText("You are Parking on "+floor+" "+block);
+        nBuilder.setContentText("You are Parking on floor "+floor+" block "+block);
         nBuilder.setSmallIcon(R.drawable.button);
 
 
