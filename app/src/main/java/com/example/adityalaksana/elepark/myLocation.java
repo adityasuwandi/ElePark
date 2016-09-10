@@ -40,11 +40,8 @@ import java.util.List;
 public class myLocation extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     String floor, block, lat, lng;
-    private Button savemap;
-    TextView txtLat, txtLng;
-//    add_kegiatan addKegiatan = new add_kegiatan();
-
     GPSTracker gps;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,13 +126,6 @@ public class myLocation extends AppCompatActivity implements OnMapReadyCallback 
             return;
         }
         mMap.setMyLocationEnabled(true);
-        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
-            @Override
-            public boolean onMyLocationButtonClick() {
-
-                return false;
-            }
-        });
 //        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
 //            @Override
 //            public void onMapLongClick(LatLng latLng) {
