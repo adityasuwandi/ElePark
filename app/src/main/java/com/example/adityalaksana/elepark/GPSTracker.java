@@ -46,7 +46,9 @@ public class GPSTracker extends Service implements LocationListener {
         }
         if (location != null){
             return location;
-        } else return null;
+        } else {
+            return null;
+        }
     }
 
     @Override
