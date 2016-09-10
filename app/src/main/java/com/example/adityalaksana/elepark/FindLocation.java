@@ -66,7 +66,7 @@ public class FindLocation extends AppCompatActivity implements OnMapReadyCallbac
 
         TextView b = (TextView) findViewById(R.id.textViewFindBlock);
         b.setText(block);
-    }//a
+    }//afhbajhksf
 
 //    public void onMapSearch(View view) {
 //        EditText locationSearch = (EditText) findViewById(R.id.map);
